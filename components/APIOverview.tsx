@@ -4,7 +4,18 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Sparkles, TrendingUp, RefreshCw, Clock, Send, CreditCard, BarChart3, Layers } from 'lucide-react';
 
-const apis = [
+import { LucideIcon } from 'lucide-react';
+
+type ApiStatus = 'stable' | 'beta' | 'new';
+
+const apis: Array<{
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  href: string;
+  status: ApiStatus;
+  features: string[];
+}> = [
   {
     title: 'Swap API',
     description: 'トークンスワップのための包括的なAPI。最適なルーティングと価格を提供',
@@ -71,13 +82,13 @@ const apis = [
   },
 ];
 
-const statusColors = {
+const statusColors: Record<ApiStatus, string> = {
   stable: 'bg-green-500/10 text-green-400 border-green-500/20',
   beta: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
   new: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
 };
 
-const statusLabels = {
+const statusLabels: Record<ApiStatus, string> = {
   stable: '安定版',
   beta: 'ベータ版',
   new: '新機能',

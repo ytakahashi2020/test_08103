@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, MessageCircle, Twitter, Globe, Mail } from 'lucide-react';
+import { Github, MessageCircle, Twitter, Globe } from 'lucide-react';
 
 const footerLinks = {
   product: {
